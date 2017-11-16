@@ -10,3 +10,5 @@
 
 module load Blat
 blat KJHRD_SPAdes_assembly_scaffolds.fasta mRNA.fa KJHRD_est_out_blat -t=dnax -q=dna
+blat KJHRF_genome.ctg.fasta EST.fa KJHRF_est_out_blat -t=dna -q=dna
+blat KJHRE_genome.ctg.fasta EST.fa KJHRE_est_out_blat -t=dna -q=dna
