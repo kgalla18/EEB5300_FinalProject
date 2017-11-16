@@ -1,12 +1,12 @@
 #!/bin/bash
-#$ -N KJHRD_BLAT_proteins
+#$ -N KJHRD_BLAT_EST     
 #$ -M kaitlin.gallagher@uconn.edu
 #$ -m bea
 #$ -S /bin/bash
 #$ -cwd
 #$ -pe smp 8
-#$ -o KJHRD_BLAT_proteins_$JOB_ID.out
-#$ -e KJHRD_BLAT_proteins_$JOB_ID.err
+#$ -o KJHRD_BLAT_EST_$JOB_ID.out
+#$ -e KJHRD_BLAT_EST_$JOB_ID.err
 
 module load Blat
 blat KJHRD_SPAdes_assembly_scaffolds.fasta mRNA.fa KJHRD_est_out_blat -t=dnax -q=dna
