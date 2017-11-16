@@ -1,0 +1,9 @@
+import sys,re
+
+fh = open("Filtered_Seq2.fasta", "r")
+lines = fh.readlines()
+NumSeq=0
+for l in lines:
+    if l[0]==">":
+        NumSeq=NumSeq+1
+print (NumSeq)
