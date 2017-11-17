@@ -1,0 +1,15 @@
+#!/bin/bash
+#$ -N RepBuilder
+#$ -M kaitlin.gallagher@uconn.edu
+#$ -m bea
+#$ -S /bin/bash
+#$ -cwd
+#$ -q highmem.q
+#$ -pe smp 1
+#$ -o $JOB_NAME_$JOB_ID.out
+#$ -e $JOB_NAME_$JOB_ID.err
+
+RepeatModeler
+BuildDatabase -name aenig_database -engine ncbi KJHRD_SPAdes_assembly_scaffolds.fasta
+BuildDatabase -name daileyi_database -engine ncbi KJHRE_genome.ctg.fasta
+BuildDatabase -name amplifica_database -engine ncbi KJHRF_genome.ctg.fasta
