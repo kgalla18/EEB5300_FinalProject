@@ -1,0 +1,14 @@
+#!/bin/bash
+#$ -N RepModeler
+#$ -M kaitlin.gallagher@uconn.edu
+#$ -m bea
+#$ -S /bin/bash
+#$ -cwd
+#$ -q highmem.q
+#$ -pe smp 8
+#$ -o $JOB_NAME_$JOB_ID.out
+#$ -e $JOB_NAME_$JOB_ID.err
+
+RepeatModeler -database aenig_database -engine ncbi -pa 7
+RepeatModeler -database daileyi_database -engine ncbi -pa 7
+RepeatModeler -database amplifica_database -engine ncbi -pa 7
