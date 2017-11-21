@@ -5,10 +5,10 @@
 #$ -S /bin/bash
 #$ -cwd
 #$ -pe smp 8
-#$ -o KJHRD_BLAT_proteins_$JOB_ID.out
-#$ -e KJHRD_BLAT_proteins_$JOB_ID.err
+#$ -o $JOB_NAME_$JOB_ID.out
+#$ -e $JOB_NAME_$JOB_ID.err
 
 module load Blat
-blat KJHRD_SPAdes_assembly_scaffolds.fasta tapeworm_proteins.fa KJHRD_out_blat -t=dnax -q=prot
-blat KJHRE_genome.ctg.fasta tapeworm_proteins.fa KJHRE_out_blat_proteins -t=dnax -q=prot
+blat KJHRD_SPAdes_SSPACE_assembly.fasta Platy__proteins.fasta KJHRD_out_blat -t=dnax -q=prot
+blat KJHRE_masurca_SSPACE_assembly.fasta Platy_proteins.fasta KJHRD_out_blat -t=dnax -q=prot
 blat KJHRF_genome.ctg.fasta tapeworm_proteins.fa KJHRF_out_blat_proteins -t=dnax -q=prot
