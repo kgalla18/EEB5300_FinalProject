@@ -11,6 +11,6 @@
 
 module load exonerate
 
-exonerate -t /tempdata3/KGalla/aenig/exonerate/KJHRD_SPAdes_assembly_scaffolds.fasta -q /tempdata3/KGalla/aenig/exonerate/Proteins/Filtered_Seq2.fasta --bestn 1 --percent 70 -s 100 --showtargetgff > KJHRD_Proteins_exonerate
-exonerate -t /tempdata3/KGalla/daileyi/exonerate/Proteins/KJHRE_genome.ctg.fasta -q /tempdata3/KGalla/daileyi/exonerate/Proteins/KJHRE_Proteins_Filtered_Seq.fasta --bestn 1 --percent 70 -s 100 --showtargetgff > KJHRE_Proteins_exonerate
+exonerate --model protein2genome -t KJHRD_SPAdes_SSPACE_assembly.fasta -q Filtered_proteins_KJHRD.fasta --bestn 1 --percent 70 -s 100 --forcegtag --showtargetgff > KJHRD_Proteins_exonerate
+exonerate --model protein2genome -t KJHRE_masurca_SSPACE_assembly.fasta -q Filtered_proteins_KJHRE.fasta --bestn 1 --percent 70 -s 100 --forcegtag --showtargetgff > KJHRE_Proteins_exonerate
 exonerate -t /tempdata3/KGalla/amplifica/exonerate/KJHRF_genome.ctg.fasta -q /tempdata3/KGalla/amplifica/exonerate/Proteins/KJHRF_Proteins_Filtered_Seq.fasta --bestn 1 --percent 70 -s 100 --showtargetgff > KJHRF_Proteins_exonerate
