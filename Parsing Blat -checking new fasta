@@ -1,6 +1,6 @@
 import sys,re
 
-fh = open("Filtered_Seq2.fasta", "r")
+fh = open("Filtered_proteins_KJHRD.fasta", "r")
 lines = fh.readlines()
 NumSeq=0
 for l in lines:
