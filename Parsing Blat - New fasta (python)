@@ -4,10 +4,10 @@ import sys,re
 
 from Bio import SeqIO
 
-output = open("Filtered_Seq2.fasta", "w")
+output = open("Filtered_proteins_KJHRD.fasta", "w")
 
 wanted = set(line.rstrip("\n").split(None,1)[0] for line in open("UniqueGeneNames.txt","r"))
 
-records = (r for r in SeqIO.parse(open("tapeworm_proteins.fa", "r"),'fasta') if r.id in wanted)
+records = (r for r in SeqIO.parse(open("Platy_proteins.fasta", "r"),'fasta') if r.id in wanted)
 
 SeqIO.write(records, output, "fasta")
