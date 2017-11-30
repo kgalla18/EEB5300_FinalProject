@@ -1,0 +1,5 @@
+##For L. daileyi:
+gawk 'BEGIN{FS="|"}{print $1}' KJHRE_masurca_SSPACE_assembly.fasta > KJHRE_masurca_assem_edited.fasta
+
+#For consensi.fa files:
+gawk 'BEGIN{FS="("}{print $1}' KJHRE_consensi.fa > KJHRE_consensi2.fa
