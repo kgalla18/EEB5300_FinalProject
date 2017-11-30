@@ -1,0 +1,2 @@
+##Command for L. aenigmaticum:
+RepeatMasker -xm -xsmall -gff -lib KJHRE_consensi2.fa KJHRE_masurca_assem_edited.fasta
