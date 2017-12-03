@@ -12,4 +12,4 @@
 RepeatModeler
 BuildDatabase -name aenig_database -engine ncbi KJHRD_SPAdes_SSPACE_assembly.fasta
 BuildDatabase -name daileyi_database -engine ncbi KJHRE_masurca_SSPACE_assembly.fasta
-BuildDatabase -name amplifica_database -engine ncbi KJHRF_genome.ctg.fasta
+BuildDatabase -name amp_database -engine ncbi KJHRF_SSPACE.final.scaffolds.fasta
