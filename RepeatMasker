@@ -1,2 +1,6 @@
 ##Command for L. aenigmaticum:
+RepeatMasker -xm -xsmall -gff -lib consensi2.fa KJHRD_spades_assem_edited.fa
+##Command for L. daileyi:
 RepeatMasker -xm -xsmall -gff -lib KJHRE_consensi2.fa KJHRE_masurca_assem_edited.fasta
+##Command for L.amplifica:
+RepeatMasker -xm -xsmall -gff -lib consensi2.fa KJHRF_masurca_assem_edited.fa
