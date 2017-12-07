@@ -1,16 +1,7 @@
-#!/bin/bash
-#$ -N Exonerate_ESTs
-#$ -M kaitlin.gallagher@uconn.edu
-#$ -m bea
-#$ -S /bin/bash
-#$ -cwd
-#$ -q highmem.q
-#$ -pe smp 1
-#$ -o $JOB_NAME_$JOB_ID.out
-#$ -e $JOB_NAME_$JOB_ID.err
-
 module load exonerate
-
+#L. aenigmaticum:
 exonerate -t /tempdata3/KGalla/aenig/exonerate/KJHRD_SPAdes_assembly_scaffolds.fasta -q /tempdata3/KGalla/aenig/exonerate/EST/KJHRD_Filtered_ESTSeq.fasta --bestn 1 --percent 70 -s 100 --showtargetgff > KJHRD_Proteins_exonerate
+#L. daileyi:
 exonerate -t /tempdata3/KGalla/daileyi/exonerate/EST/KJHRE_genome.ctg.fasta -q /tempdata3/KGalla/daileyi/exonerate/EST/KJHRE_Filtered_ESTSeq.fasta --bestn 1 --percent 70 -s 100 --showtargetgff > KJHRE_EST_exonerate
+#L. amplifica:
 exonerate -t /tempdata3/KGalla/amplifica/exonerate/KJHRF_genome.ctg.fasta -q /tempdata3/KGalla/amplifica/exonerate/EST/KJHRF_Filtered_ESTSeq.fasta --bestn 1 --percent 70 -s 100 --showtargetgff > KJHRF_EST_exonerate
