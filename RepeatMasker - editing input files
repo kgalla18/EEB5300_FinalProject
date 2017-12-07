@@ -1,4 +1,4 @@
-##For L. daileyi:
+##For L. daileyi genome assembly:
 gawk 'BEGIN{FS="|"}{print $1}' KJHRE_masurca_SSPACE_assembly.fasta > KJHRE_masurca_assem_edited.fasta
 
 #For consensi.fa files:
