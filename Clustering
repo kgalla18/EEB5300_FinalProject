@@ -1,14 +1,3 @@
-#!/bin/bash
-#$ -N KJHRD_Clustering_Prot
-#$ -M kaitlin.gallagher@uconn.edu
-#$ -m bea
-#$ -S /bin/bash
-#$ -cwd
-#$ -q molfind.q
-#$ -pe smp 4
-#$ -o $JOB_NAME_$JOB_ID.out
-#$ -e $JOB_NAME_$JOB_ID.err
-
 #Clustering at 80% sequence similarity:
 usearch -cluster_fast KJHRD_Filtered_Exonerate_ProtSeq.fasta --id 0.8 -centroids KJHRD_Proteins.fasta -uc clusters -clusters KJHRD_Prot_clusters
 
