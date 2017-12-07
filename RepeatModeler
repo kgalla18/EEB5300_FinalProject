@@ -1,6 +1,4 @@
-
-#Command line I used for running repeatmodeler for each species. L. daileyi and L. amplifica were run with 8 cores 
-#while L. aenigmaticum was run with 16 cores and 500G memory.
+#Command line I used for running repeatmodeler for each species. L. daileyi and L. amplifica were run with 8 cores while L. aenigmaticum was run with 16 cores and 500G memory.
 
 RepeatModeler -database aenig_database -engine ncbi -pa 7
 RepeatModeler -database daileyi_database -engine ncbi -pa 7
