@@ -1,0 +1,39 @@
+import sys,re
+from Bio import SeqIO
+
+##parsing gff3 output from genomethreader to get names of genes that mapped
+fh = open("genomethreader-196811.output", "r")
+GenomeTh = fh.readlines()
+
+Gene=[]
+for line in GenomeTh:
+	if line[0] != "#":  #if line doesn't start with # symbol then do the following
+		column = line.split("\t")  #split the line into columns so I can parse them separately
+		if column[2] == "gene":    ##if column 3 = gene then do the following
+			Gen=column[8].split(";") ##split up column 8 by the ;
+        	Name=Gen[1].split("=")
+        	N=Name[1]  ##this contains only seqID which is what I want, but it still has extra info at the end that I don't need
+        	M=N.split(" ")
+        	O=M[0]  ##now this is only the sequence name which I need
+        	Gene.append(O) ##place seq name in this list
+
+UniqNames=set(Gene) ##get only unique gene names, don't want duplicates
+print (UniqNames)
+print (len(UniqNames))
+
+Names=list(UniqNames)
+NamePerLine='\n'.join([ str(myelement) for myelement in Names ]) ##adds line delimiters so each name gets its own line
+print(NamePerLine)
+
+fh=open("UniqueGeneNames.txt", "w") ##will use this txt file with mapped gene names to make a new fasta file
+fh.writelines(NamePerLine)
+fh.close()	
+
+##making the new fasta file:
+output = open("Filtered_GT_proteins_KJHRF.fasta", "w")
+
+wanted = set(line.rstrip("\n").split(None,1)[0] for line in open("UniqueGeneNames.txt","r"))
+
+records = (r for r in SeqIO.parse(open("Filtered_proteins_KJHRF.fasta", "r"),'fasta') if r.id in wanted)
+
+SeqIO.write(records, output, "fasta")
